@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../confirmationMessage/successLogin/success.dart';
 import '../register/register.dart';
 
 class LoginView extends StatefulWidget {
@@ -19,12 +20,9 @@ class _LoginViewState extends State<LoginView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar( title: Center(
-        child: Text(
-          "login",
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-        ),
-      ),
+      appBar: AppBar(
+        centerTitle:true ,
+       title: Text("login",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 17),),
         leading: IconButton(
           icon: Icon(Icons.arrow_back_sharp),
           onPressed: () {
@@ -89,7 +87,7 @@ class _LoginViewState extends State<LoginView> {
                 ],
               )),
           SizedBox(
-            height: 30,
+            height: 20,
           ),
           Container(
               width: double.infinity,
@@ -98,11 +96,12 @@ class _LoginViewState extends State<LoginView> {
                   backgroundColor: Color(0xffdd8560)),
                   onPressed: () {},
                   child: Text(
-                    "continue",
+                    "login",
                   ))),
           SizedBox(
             height: 19,
           ),
+
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -117,40 +116,105 @@ class _LoginViewState extends State<LoginView> {
                   },
                   child: Text("Sign Up",style: TextStyle(color: Color(0xffdd8560)),))
             ],
-          ),
-
-
-
-
-
-
-          SizedBox(height: 21,),
-         OutlinedButton(onPressed: (){}, child: Text(
-           "Sign in with google",style: TextStyle(fontWeight: FontWeight.w600,fontSize: 16,color: Colors.black),)),
-          
-          
-          SizedBox(height: 21,),
-          TextFormField(
-            controller: passwordController,
-
-            keyboardType: TextInputType.text,
-            obscureText: isPasswordHidden,
-            decoration: InputDecoration(  border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(24)),
-                labelText: "Enter your password",
-                suffixIcon: IconButton(
-                  icon: Icon(Icons.visibility_off),
-                  onPressed: () {
-                    isPasswordHidden = !isPasswordHidden;
-                    setState(() {});
-                  },
+          ),SizedBox(height: 10,),
+          Row(
+            children: [
+              Expanded(
+                child: Divider(
+                  color: Colors.grey, // لون الخط
+                  thickness: 1, // سمك الخط
                 ),
-                prefixIcon: Image.asset(
-                  "assets/images/password 1 (1).png",
-                )
-            ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: Text(
+                  "OR",
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                ),
+              ),
+              Expanded(
+                child: Divider(
+                  color: Colors.grey,
+                  thickness: 1,
+                ),
+              ),
+            ],
           ),
-          SizedBox(height: 21,),
+
+
+ SizedBox(height: 30,),
+          Container(height: 50,
+              width: double.infinity,decoration: BoxDecoration(),
+              margin: EdgeInsets.symmetric(horizontal: 0),
+              child: FilledButton( style: ElevatedButton.styleFrom(
+                  backgroundColor:Color(0xFFFFFFFF)),
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => Confirmation(),));
+
+
+                  },
+                 child: Row(children: [
+                   Image.asset("assets/images/google (3) 1.png"),
+                   SizedBox(width: 52,),
+                   Text("Sign in with google",style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.w600),),
+    ],),
+          ),
+        // InkWell(onTap: () {
+        // },
+        //     child: Container(
+        //       height: 60,
+        //       width: 200,
+        //       decoration: BoxDecoration(color: Colors.red,
+        //         border: Border.all(
+        //           color: Colors.grey.withOpacity(1.0),
+        //           width: 1.0,
+        //         ),
+        //         borderRadius: BorderRadius.circular(32), // Uniform radius
+        //       ),child: Row(children: [
+        //         Text("dmdmdmddm")
+        //     ],),
+        //     ),
+          ),
+
+
+
+          SizedBox(height: 16,),
+          Container(height: 50,
+            width: double.infinity,decoration: BoxDecoration(),
+            margin: EdgeInsets.symmetric(horizontal: 0),
+            child: FilledButton( style: ElevatedButton.styleFrom(
+                backgroundColor:Color(0xFFFFFFFF)),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Confirmation(),));
+
+
+              },
+              child: Row(children: [
+                Image.asset("assets/images/apple.png"),
+                SizedBox(width: 52,),
+                Text("Sign in with Apple",style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.w600),),
+              ],),
+            ),
+
+          ),
+          SizedBox(height: 16,),
+          Container(height: 50,
+            width: double.infinity,decoration: BoxDecoration(),
+            margin: EdgeInsets.symmetric(horizontal: 0),
+            child: FilledButton( style: ElevatedButton.styleFrom(
+                backgroundColor:Color(0xFFFFFFFF)),
+              onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Confirmation(),));
+              },
+              child: Row(children: [
+                Image.asset("assets/images/facebook (2) 1 (1).png"),
+                SizedBox(width: 52,),
+                Text("Sign in with Facebook",style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.w600),),
+              ],),
+            ),
+
+          ),
+
         ],
 
       ),

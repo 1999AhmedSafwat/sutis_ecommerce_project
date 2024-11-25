@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../login/login.dart';
 import '../splash/slider.dart';
 
 class Register extends StatefulWidget {
@@ -18,7 +19,7 @@ class _RegisterState extends State<Register> {
   Widget build(BuildContext context) {
     return Scaffold(
       //backgroundColor: Colors.,
-      appBar: AppBar(
+      appBar: AppBar( centerTitle:true ,
         backgroundColor: Colors.white70,
         title: Center(
           child: Text(
@@ -161,7 +162,7 @@ class _RegisterState extends State<Register> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => SliderPageView(),
+                          builder: (context) => LoginView(),
                         ));
                   },
                   child: Text(
