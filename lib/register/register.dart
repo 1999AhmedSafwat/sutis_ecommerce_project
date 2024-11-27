@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../bottomNavigationBar/navigationBar/navigation.dart';
 import '../login/login.dart';
 import '../splash/slider.dart';
 
@@ -162,7 +163,7 @@ class _RegisterState extends State<Register> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => LoginView(),
+                          builder: (context) => Navigationbar(),
                         ));
                   },
                   child: Text(

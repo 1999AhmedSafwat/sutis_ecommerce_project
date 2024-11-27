@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../login/login.dart';
 import '../register/register.dart';
 
 class SliderPageView extends StatefulWidget {
@@ -86,7 +87,7 @@ class _SliderPageViewState extends State<SliderPageView> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => Register(),
+                                builder: (context) => LoginView(),
                               ));
                         }, icon:Icon(Icons.back_hand,color: Color(0xffdd8560)),),bottom: 10,right: 10,),
                         Positioned(
