@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 
-class NotificationsView extends StatelessWidget {
+class NotificationsView extends StatefulWidget {
   const NotificationsView({super.key});
 
+  @override
+  State<NotificationsView> createState() => _NotificationsViewState();
+}
+
+class _NotificationsViewState extends State<NotificationsView> {
+  bool isVisible = false;
+  bool isBodyVisible = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,6 +17,16 @@ class NotificationsView extends StatelessWidget {
       body: ListView(padding: EdgeInsets.all(10),
 
         children: [
+          Switch(
+            value: isBodyVisible,
+            onChanged: (value) {
+              setState(() {
+                isBodyVisible = value;
+              });
+            },
+          ),
+          // Body
+          if (isBodyVisible)
         _Item(),
         _Item(),
         _Item(),

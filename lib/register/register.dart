@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../bottomNavigationBar/navigationBar/navigation.dart';
+import '../forgetPassword/forget.dart';
 import '../login/login.dart';
 import '../splash/slider.dart';
+import '../verificationCode/verificationCode.dart';
 
 class Register extends StatefulWidget {
   @override
@@ -34,7 +36,7 @@ class _RegisterState extends State<Register> {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => SliderPageView(),
+                  builder: (context) => LoginView(),
                 ));
           },
         ),
@@ -147,7 +149,9 @@ class _RegisterState extends State<Register> {
                 child: FilledButton(
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Color(0xffdd8560)),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => Verificationcode(),));
+                    },
                     child: Text(
                       "Sign UP",
                     ))),
@@ -163,7 +167,7 @@ class _RegisterState extends State<Register> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => Navigationbar(),
+                          builder: (context) => ForgetPassword(),
                         ));
                   },
                   child: Text(

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:project/splash/start.dart';
 
+import '../bottomNavigationBar/navigationBar/navigation.dart';
 import '../login/login.dart';
 import '../register/register.dart';
 
@@ -43,72 +45,97 @@ class _SliderPageViewState extends State<SliderPageView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Stack(
-          children: [TextButton(onPressed: (){}, child: Text("Skip")),
-            Expanded(
-              child: PageView.builder(
-                  itemCount: list.length,
-                  onPageChanged: (position) {
-                    setState(() {
-                      _currentPage = position;
-                    });
-                  },
-                  itemBuilder: (context, position) {
-                    return Stack(
-                      children: [
-                        Center(
-                            child: Image.asset(
-                          list[position].image,
-                        )),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Positioned(
-                          child: Text(
-                            list[position].title,
-                            style: TextStyle(color: Colors.white,
-                                fontWeight: FontWeight.w700, fontSize: 36),
-                          ),
-                          bottom: 142,left: 10,
-                        ),
-                        Positioned(
-                          child: Text(
-                            list[position].desc,
-                            style: TextStyle(
-                              fontWeight: FontWeight.w400,
+      body: Stack(
+        children: [
+          Expanded(
+            child: PageView.builder(
+                itemCount: list.length,
+                onPageChanged: (position) {
+                  setState(() {
+                    _currentPage = position;
+                  });
+                },
+                itemBuilder: (context, position) {
+                  return Stack(
+                    children: [
+                      Center(
+                          child: Image.asset(
+                        list[position].image,
+                      )),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Positioned(
+                        child: Text(
+                          list[position].title,
+                          style: TextStyle(
                               color: Colors.white,
-                              fontSize: 14,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 36),
+                        ),
+                        bottom: 142,
+                        left: 10,
+                      ),
+                      Positioned(
+                        child: Text(
+                          list[position].desc,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            color: Colors.white,
+                            fontSize: 14,
+                          ),
+                        ),
+                        bottom: 100,
+                        left: 10,
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Positioned(
+                          child: InkWell( onTap:(){
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => StartView(),));
+                          },
+                      child: Container(height: 40,width: 80,decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.circular(20)
+                                ,border: Border.all(
+                              width: 1
                             ),
-                          ),bottom: 100,left: 10,
+                            ),child: Center(child: Text("Skip",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w400),)),),
+                          ),
+
+                      right: 20,top: 30,),
+                      Positioned(
+                        child: IconButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => StartView(),
+                                ));
+                          },
+                          icon: Icon(Icons.back_hand, color: Color(0xffdd8560)),
                         ),
-
-                        SizedBox(height: 10,),
-                        Positioned(child: IconButton(onPressed: (){
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => LoginView(),
-                              ));
-                        }, icon:Icon(Icons.back_hand,color: Color(0xffdd8560)),),bottom: 10,right: 10,),
-                        Positioned(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: List.generate(3, (index) => buildIndicator(index)),
-                          ),bottom: 41,left: 120,
-
-
-
-
+                        bottom: 10,
+                        right: 10,
+                      ),
+                      Positioned(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: List.generate(
+                              3, (index) => buildIndicator(index)),
                         ),
-                      ],
-                    );
-                  }),
-            ),
-              ],
-            ),
-
-        );
+                        bottom: 41,
+                        left: 120,
+                      ),
+                    ],
+                  );
+                }),
+          ),
+        ],
+      ),
+    );
   }
+
   Widget buildIndicator(int index) {
     return AnimatedContainer(
       duration: Duration(milliseconds: 200),

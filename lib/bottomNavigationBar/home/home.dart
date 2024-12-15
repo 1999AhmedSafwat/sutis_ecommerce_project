@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import '../../login/login.dart';
 import '../../notifications/notifications.dart';
+import '../shoping/shoping.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -98,7 +99,7 @@ class _HomeViewState extends State<HomeView> {
                             FilledButton(
                               style: ElevatedButton.styleFrom(
                                   backgroundColor: Color(0xffdd8560)),
-                              onPressed: () {},
+                              onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => ShopingView()));},
                               child: Text(
                                 "Shop Now",
                               ),
@@ -147,24 +148,26 @@ class _HomeViewState extends State<HomeView> {
                       children: [
                         Padding(
                           padding: const EdgeInsets.all(0),
-                          child: Column(
-                            children: [
-                              Container(
-                                width: 60,
-                                height: 60,
-                                decoration: BoxDecoration(
-                                  color: Colors.white70,
-                                  shape: BoxShape.circle,
-                                  border: Border.all(
-                                    color: Color(0xffdd8560),
-                                    width: 1,
+                          child: GestureDetector(onTap:(){Navigator.push(context, MaterialPageRoute(builder: (context) => ShopingView(),));} ,
+                            child: Column(
+                              children: [
+                                Container(
+                                  width: 60,
+                                  height: 60,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white70,
+                                    shape: BoxShape.circle,
+                                    border: Border.all(
+                                      color: Color(0xffdd8560),
+                                      width: 1,
+                                    ),
+                                    image: DecorationImage(
+                                      image: AssetImage('assets/images/1.png'),
+                                    ),
                                   ),
-                                  image: DecorationImage(
-                                    image: AssetImage('assets/images/1.png'),
-                                  ),
-                                ),
-                              ),SizedBox(height: 5,),Text("Blazar",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 12))
-                            ],
+                                ),SizedBox(height: 5,),Text("Blazar",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 12))
+                              ],
+                            ),
                           ),
                         ),
 
@@ -180,6 +183,36 @@ class _HomeViewState extends State<HomeView> {
 
                         Padding(
                           padding: const EdgeInsets.all(0.0),
+                          child: GestureDetector(onTap:(){Navigator.push(context, MaterialPageRoute(builder: (context) => ShopingView(),));},
+                            child: Column(
+                              children: [
+                                Container(
+                                  width: 60,
+                                  height: 60,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white70,
+                                    shape: BoxShape.circle,
+                                    border: Border.all(
+                                      color: Color(0xffdd8560),
+                                      width: 1,
+                                    ),
+                                    image: DecorationImage(
+                                      image: AssetImage('assets/images/2.png'),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5,),Text("Shirt",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 12),)
+                              ],
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 20,
+                        ),
+
+
+
+                        GestureDetector(onTap:(){Navigator.push(context, MaterialPageRoute(builder: (context) => ShopingView(),));},
                           child: Column(
                             children: [
                               Container(
@@ -193,11 +226,12 @@ class _HomeViewState extends State<HomeView> {
                                     width: 1,
                                   ),
                                   image: DecorationImage(
-                                    image: AssetImage('assets/images/2.png'),
+                                    image: AssetImage('assets/images/3.png'),
                                   ),
                                 ),
                               ),
-                              SizedBox(height: 5,),Text("Shirt",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 12),)
+                              SizedBox(height: 5,),Text("Men Shoes",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 12),)
+
                             ],
                           ),
                         ),
@@ -207,53 +241,28 @@ class _HomeViewState extends State<HomeView> {
 
 
 
-                        Column(
-                          children: [
-                            Container(
-                              width: 60,
-                              height: 60,
-                              decoration: BoxDecoration(
-                                color: Colors.white70,
-                                shape: BoxShape.circle,
-                                border: Border.all(
-                                  color: Color(0xffdd8560),
-                                  width: 1,
-                                ),
-                                image: DecorationImage(
-                                  image: AssetImage('assets/images/3.png'),
-                                ),
-                              ),
-                            ),
-                            SizedBox(height: 5,),Text("Men Shoes",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 12),)
-
-                          ],
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-
-
-
-                        Column(
-                          children: [
-                            Container(
-                              width: 60,
-                              height: 60,
-                              decoration: BoxDecoration(
-                                color: Colors.white70,
-                                shape: BoxShape.circle,
-                                border: Border.all(
-                                  color: Color(0xffdd8560),
-                                  width: 1,
-                                ),
-                                image: DecorationImage(
-                                  image: AssetImage('assets/images/4.png'),
+                        GestureDetector(onTap:(){Navigator.push(context, MaterialPageRoute(builder: (context) => ShopingView(),));},
+                          child: Column(
+                            children: [
+                              Container(
+                                width: 60,
+                                height: 60,
+                                decoration: BoxDecoration(
+                                  color: Colors.white70,
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                    color: Color(0xffdd8560),
+                                    width: 1,
+                                  ),
+                                  image: DecorationImage(
+                                    image: AssetImage('assets/images/4.png'),
+                                  ),
                                 ),
                               ),
-                            ),
-                            SizedBox(height: 5,),Text("Women Shoes",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 12),)
+                              SizedBox(height: 5,),Text("Women Shoes",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 12),)
 
-                          ],
+                            ],
+                          ),
                         ),
                         SizedBox(
                           width: 20,
@@ -262,26 +271,28 @@ class _HomeViewState extends State<HomeView> {
 
 
 
-                        Column(
-                          children: [
-                            Container(
-                              width: 60,
-                              height: 60,
-                              decoration: BoxDecoration(
-                                color: Colors.white70,
-                                shape: BoxShape.circle,
-                                border: Border.all(
-                                  color: Color(0xffdd8560),
-                                  width: 1,
-                                ),
-                                image: DecorationImage(
-                                  image: AssetImage('assets/images/5.png'),
+                        GestureDetector(onTap:(){Navigator.push(context, MaterialPageRoute(builder: (context) => ShopingView(),));},
+                          child: Column(
+                            children: [
+                              Container(
+                                width: 60,
+                                height: 60,
+                                decoration: BoxDecoration(
+                                  color: Colors.white70,
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                    color: Color(0xffdd8560),
+                                    width: 1,
+                                  ),
+                                  image: DecorationImage(
+                                    image: AssetImage('assets/images/5.png'),
+                                  ),
                                 ),
                               ),
-                            ),
-                            SizedBox(height: 5,),Text("dress",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 12),)
+                              SizedBox(height: 5,),Text("dress",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 12),)
 
-                          ],
+                            ],
+                          ),
                         ),
                       ],
                     ),
@@ -375,15 +386,16 @@ class _HomeViewState extends State<HomeView> {
                         // You won't see infinite size error
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
-                            crossAxisSpacing: 22,
-                            mainAxisSpacing: 28),
+                            crossAxisSpacing: 15,
+                            mainAxisSpacing: 15),
                         itemCount: 8,
                         itemBuilder: (context, index) {
                           // final product = allProduct[index];
                           return Container(
                             decoration: BoxDecoration(
+                              //color: Colors.red,
                               borderRadius: BorderRadius.circular(
-                                0  ,
+                                10  ,
                               ),
                              // color: Colors.grey.shade400,
                             ),
@@ -396,11 +408,13 @@ class _HomeViewState extends State<HomeView> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Image.asset(
-                                        'assets/images/person.png',
-                                        height: 149,
-                                        width: 220,
-                                        fit: BoxFit.cover,
+                                      GestureDetector(  onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => ShopingView(),));},
+                                        child: Image.asset(
+                                          'assets/images/person.png',
+                                          height: 149,
+                                          width: 220,
+                                          //fit: BoxFit.cover,
+                                        ),
                                       ),
 
                                     ],

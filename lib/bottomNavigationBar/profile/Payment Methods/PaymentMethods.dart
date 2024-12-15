@@ -105,110 +105,133 @@ class _PaymentMethodsState extends State<PaymentMethods> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Image.asset("assets/images/paypal 1.png"),
-                        SizedBox(
-                          width: 15,
-                        ),
-                        Text(
-                          "Paypal",
-                          style: TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.w600),
-                        ),
-                        Spacer(),
-                        GestureDetector(onTap: () {
+                    child: GestureDetector(onTap: () {
+                      setState(() {
+                        _COLOR = _COLOR == Colors.white
+                            ? Colors.blue
+                            : Colors.white;
+                      });
+                    },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset("assets/images/paypal 1.png"),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          Text(
+                            "Paypal",
+                            style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.w600),
+                          ),
+                          Spacer(),
+                          GestureDetector(onTap: () {
 
-                          setState(() {
-                            _COLOR = _COLOR == Colors.white
-                                ? Colors.blue
-                                : Colors.white;
-                          });
-                        },
-                          child: Container(
-                            height: 20,
-                            width: 20,
-                            decoration: BoxDecoration(
-                                color:_COLOR,
-                                border: Border.all(color: Colors.grey),
-                                borderRadius: BorderRadius.circular(30)),
-                          ),
-                        )
-                      ],
+                            setState(() {
+                              _COLOR = _COLOR == Colors.white
+                                  ? Colors.blue
+                                  : Colors.white;
+                            });
+                          },
+                            child: Container(
+                              height: 20,
+                              width: 20,
+                              decoration: BoxDecoration(
+                                  color:_COLOR,
+                                  border: Border.all(color: Colors.grey),
+                                  borderRadius: BorderRadius.circular(30)),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
-                  ),
-                  Divider(),
+                  ), Divider(),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Image.asset("assets/images/apple-logo 5.png"),
-                        SizedBox(
-                          width: 15,
-                        ),
-                        Text(
-                          "Apple Pay",
-                          style: TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.w600),
-                        ),
-                        Spacer(),
-                        GestureDetector(onTap: () {
-                          setState(() {
-                            _containerColor = _containerColor == Colors.white
-                                ? Colors.blue
-                                : Colors.white;
-                          });
-                        },
-                          child: Container(
-                            height: 20,
-                            width: 20,
-                            decoration: BoxDecoration(
-                                color: _containerColor,
-                                border: Border.all(color: Colors.grey),
-                                borderRadius: BorderRadius.circular(30)),
+                    child: GestureDetector(onTap: () {
+                      setState(() {
+                        _containerColor = _containerColor == Colors.white
+                            ? Colors.blue
+                            : Colors.white;
+                      });
+                    },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset("assets/images/apple-logo 5.png"),
+                          SizedBox(
+                            width: 15,
                           ),
-                        )
-                      ],
+                          Text(
+                            "Apple Pay",
+                            style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.w600),
+                          ),
+                          Spacer(),
+                          GestureDetector(onTap: () {
+                            setState(() {
+                              _containerColor = _containerColor == Colors.white
+                                  ? Colors.blue
+                                  : Colors.white;
+                            });
+                          },
+                            child: Container(
+                              height: 20,
+                              width: 20,
+                              decoration: BoxDecoration(
+                                  color: _containerColor,
+                                  border: Border.all(color: Colors.grey),
+                                  borderRadius: BorderRadius.circular(30)),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
-                  ),
-                  Divider(),
+                  ), Divider(),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Image.asset("assets/images/google3.png"),
-                        SizedBox(
-                          width: 15,
-                        ),
-                        Text(
-                          "Paypal",
-                          style: TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.w600),
-                        ),
-                        Spacer(),
-                        GestureDetector(onTap: () {
-                          setState(() {
-                            _CONTAINARCOLOR = _CONTAINARCOLOR == Colors.white
-                                ? Colors.blue
-                                : Colors.white;
-                          });
-                        },
-                          child: Container(
-                            height: 20,
-                            width: 20,
-                            decoration: BoxDecoration(
-                                color: _CONTAINARCOLOR,
-                                border: Border.all(color: Colors.grey),
-                                borderRadius: BorderRadius.circular(30)),
+                    child: GestureDetector(onTap: () {
+
+                      setState(() {
+                        _CONTAINARCOLOR = _CONTAINARCOLOR == Colors.white
+                            ? Colors.blue
+                            : Colors.white;
+                      });
+                    },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset("assets/images/google3.png"),
+                          SizedBox(
+                            width: 15,
                           ),
-                        )
-                      ],
+                          Text(
+                            "Paypal",
+                            style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.w600),
+                          ),
+                          Spacer(),
+                          GestureDetector(onTap: () {
+                            setState(() {
+                              _CONTAINARCOLOR = _CONTAINARCOLOR == Colors.white
+                                  ? Colors.blue
+                                  : Colors.white;
+                            });
+                          },
+                            child: Container(
+                              height: 20,
+                              width: 20,
+                              decoration: BoxDecoration(
+                                  color: _CONTAINARCOLOR,
+                                  border: Border.all(color: Colors.grey),
+                                  borderRadius: BorderRadius.circular(30)),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ],

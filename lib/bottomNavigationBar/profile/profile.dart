@@ -4,6 +4,7 @@ import 'dart:io';
 import '../../notifications/notifications.dart';
 import '../home/home.dart';
 import '../navigationBar/navigation.dart';
+import '../shoping/shoping.dart';
 import 'Payment Methods/PaymentMethods.dart';
 
 class Profile extends StatelessWidget {
@@ -101,13 +102,10 @@ Navigator.push(context, MaterialPageRoute(builder:(context) => PaymentMethods(),
             title: Text('Wishlist',style: TextStyle(fontWeight: FontWeight.w600,fontSize: 15),),
             children: [
               ListTile(
-                title: Text('Email Notifications'),
-                onTap: () {},
+                title: Text('Wishlist'),
+                onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => ShopingView(),));},
               ),
-              ListTile(
-                title: Text('Push Notifications'),
-                onTap: () {},
-              ),
+
             ],
           ),
           ExpansionTile(

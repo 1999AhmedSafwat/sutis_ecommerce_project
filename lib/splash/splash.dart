@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:project/splash/slider.dart';
 import 'package:project/splash/splash2.dart';
 
 class SplashView extends StatefulWidget {

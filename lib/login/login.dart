@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../confirmationMessage/successLogin/success.dart';
+import '../forgetPassword/forget.dart';
 import '../register/register.dart';
+import '../splash/start.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -29,7 +31,7 @@ class _LoginViewState extends State<LoginView> {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => Register(),
+                  builder: (context) => StartView(),
                 ));
           },
         ),
@@ -78,7 +80,7 @@ class _LoginViewState extends State<LoginView> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Register(),
+                      builder: (context) => ForgetPassword(),
                     ));
               },
               child: Row(mainAxisAlignment: MainAxisAlignment.end,
@@ -94,7 +96,9 @@ class _LoginViewState extends State<LoginView> {
               margin: EdgeInsets.symmetric(horizontal: 5),
               child: FilledButton(  style: ElevatedButton.styleFrom(
                   backgroundColor: Color(0xffdd8560)),
-                  onPressed: () {},
+                  onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Register(),));
+                  },
                   child: Text(
                     "login",
                   ))),

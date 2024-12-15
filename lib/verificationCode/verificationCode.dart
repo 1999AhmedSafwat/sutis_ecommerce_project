@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
+import '../bottomNavigationBar/navigationBar/navigation.dart';
 import '../forgetPassword/forget.dart';
+import '../register/register.dart';
 
 
 class Verificationcode extends StatelessWidget {
@@ -12,7 +14,9 @@ class Verificationcode extends StatelessWidget {
     return Scaffold(appBar: AppBar(
       leading: IconButton(
         icon: Icon(Icons.arrow_back_sharp),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => Register(),));
+        },
       ),
     ),
         body: ListView(
@@ -51,13 +55,16 @@ class Verificationcode extends StatelessWidget {
                 pinTheme: PinTheme(
                   activeColor: Color(0xffdd8560),
                   shape: PinCodeFieldShape.box,
-
+                  inactiveColor: Colors.grey,
+                  selectedColor: Colors.black.withOpacity(0.9),
                   borderRadius: BorderRadius.circular(7),
                   fieldHeight: 50,
                   fieldWidth: 31,
+
                   activeFillColor: Colors.white,),
                 cursorColor: Colors.black,
-                enableActiveFill: true,
+
+                enableActiveFill: false,
                 keyboardType: TextInputType.number,
               ),
             ),
@@ -76,7 +83,9 @@ class Verificationcode extends StatelessWidget {
                 child: FilledButton(
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Color(0xffdd8560)),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => Navigationbar(),));
+                    },
                     child: Text(
                       "Verify",
                     ))),

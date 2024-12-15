@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:project/forgetPassword/writeEmail.dart';
 
 import '../register/register.dart';
 import '../verificationCode/verificationCode.dart';
+import 'forget.dart';
 
-class ForgetPassword extends StatefulWidget {
-  const ForgetPassword({super.key});
+class WriteEmil extends StatefulWidget {
+  const WriteEmil({super.key});
 
   @override
-  State<ForgetPassword> createState() => _ForgetPasswordState();
+  State<WriteEmil> createState() => _ForgetPasswordState();
 }
 
-class _ForgetPasswordState extends State<ForgetPassword> {
+class _ForgetPasswordState extends State<WriteEmil> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,27 +43,28 @@ class _ForgetPasswordState extends State<ForgetPassword> {
             child: Row(
               mainAxisSize: MainAxisSize.max,
               children: [
-                InkWell(onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) =>WriteEmil() ,));                },
+                InkWell(onTap: () {},
+                child: Container(color: Colors.black12,
+                  width: 100,
+                  child: Text("email"),
+                ),
+              ),SizedBox(width: 50,),
+                InkWell(onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => ForgetPassword(),));
+                },
                   child: Container(color: Colors.white10
                     ,
                     width: 100,
-                    child: Text("Email"),
+                    child: Text("phone"),
                   ),
 
                 ),
-                SizedBox(width: 50,),
-                InkWell(onTap: () {
-                },
-                  child: Container(color: Colors.black12,
-                    width: 100,
-                    child: Text("phone"),
-                  ),
-                ),
+
+
               ],
             ),
           )
-,
+          ,
           SizedBox(
             height: 24,
           ),
@@ -73,16 +74,18 @@ class _ForgetPasswordState extends State<ForgetPassword> {
 
           TextField(
 
-            keyboardType: TextInputType.number,
+            keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
                 border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(24)),
-                hintText: "phone number",
-                prefixIcon: Image.asset("assets/images/call 1.png")),
+                    borderRadius: BorderRadius.circular(24)
+                ),
+                hintText: "Write Email",
+                prefixIcon: Image.asset("assets/images/Email.png")
+              ),
           ),
 
 
-SizedBox(height: 32,),
+          SizedBox(height: 32,),
           Container(
               width: double.infinity,
               margin: EdgeInsets.symmetric(horizontal: 5),
