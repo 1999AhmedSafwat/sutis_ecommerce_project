@@ -11,6 +11,7 @@ class ShopingView extends StatefulWidget {
 }
 
 class _ShopingViewState extends State<ShopingView> {
+  bool _isTapped = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,9 +73,20 @@ class _ShopingViewState extends State<ShopingView> {
                   SizedBox(height: 0,),
                   Positioned(child: Text("83.97",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w400),),bottom: 5,),
                   Positioned(child: Container(height: 30,width: 30,decoration: BoxDecoration(color: Colors.white.withOpacity(0.5),borderRadius: BorderRadius.circular(20)),
-                      child: Image.asset("assets/images/notLove.png",color: Colors.black,)),right: 3,top: 3,height: 30,),
+
+                      child: GestureDetector(
+                          onTap: () {
+                      setState(() {
+                      _isTapped = !_isTapped;
+                      });
+                      },   child: ColorFiltered(
+                          colorFilter: ColorFilter.mode(
+                            _isTapped ? Colors.grey.withOpacity(0.5) : Colors.transparent,
+                            BlendMode.srcATop,
+                          ),
+                          child: Image.asset("assets/images/lovecolor.png",color: Color(0xffdd8560),))),),right: 1,height: 29,
                  // Positioned(child: Image.asset("assets/images/notLove.png"),right: 3,top: 3,height: 40,),
-                ],
+                  )],
               ),
             ),
           );

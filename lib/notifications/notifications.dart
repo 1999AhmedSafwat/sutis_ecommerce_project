@@ -17,14 +17,14 @@ class _NotificationsViewState extends State<NotificationsView> {
       body: ListView(padding: EdgeInsets.all(10),
 
         children: [
-          Switch(
-            value: isBodyVisible,
-            onChanged: (value) {
-              setState(() {
-                isBodyVisible = value;
-              });
-            },
-          ),
+          // Switch(
+          //   value: isBodyVisible,
+          //   onChanged: (value) {
+          //     setState(() {
+          //       isBodyVisible = value;
+          //     });
+          //   },
+          // ),
           // Body
           if (isBodyVisible)
         _Item(),
